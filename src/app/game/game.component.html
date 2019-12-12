@@ -1,0 +1,34 @@
+<form [formGroup]="questions">
+  <ng-container *ngFor="let item of items" >
+  <div  *ngIf="count==item">
+  <p>Q{{item}}</p>
+  <label>
+    First :
+    <input type="radio" value="first" formControlName="first" (click)="sub($event)">
+  </label>
+
+  <label>
+    Sec :
+    <input type="radio"  value="sec" formControlName="first" (click)="sub($event)">
+  </label>
+  <label>
+    Three:
+    <input type="radio" value="thi" formControlName="first" (click)="sub($event)">
+  </label>
+
+  <label>
+    Four:
+    <input type="radio"   value="four"formControlName="first" (click)="sub($event)">
+  </label>
+  
+</div>
+</ng-container>
+
+<div *ngIf="count==3">
+  Thanks
+</div>
+<div>
+  Score:{{score}}/10;
+</div>
+{{questions.value|json}}
+</form>
