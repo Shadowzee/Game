@@ -17,3 +17,13 @@
 </div>
 {{form.value|json}}
 </form>
+<ngx-gauge [type]="gaugeType" 
+[min]="min"
+[max]="max"
+[animate]=true
+[cap]="butt"
+[thresholds]="thresholds"
+           [value]="gaugeValue" 
+           [label]="gaugeLabel"  
+           [append]="gaugeAppendText">
+</ngx-gauge>

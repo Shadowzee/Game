@@ -14,7 +14,24 @@ questions;
 question=[];
 form:FormGroup;
 
+gaugeType = "semi";
+gaugeValue = this.score;
+max=10;
+min=0;
+thresholds={
+  '5':{
+    color:'green'
+  },
+  '3':{
+    color:'orange'
+  },
+  '0':{
+    color:'red'
+  }
  
+}
+gaugeLabel = "Score";
+gaugeAppendText = "km/hr";
  ans=["thi",'sec']
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
@@ -45,6 +62,7 @@ if(this.form.controls.question.value==this.question[this.count-1].ans){
 
 
 this.count++;
+this.gaugeValue = this.score;
 this.form.reset();
 }
 
