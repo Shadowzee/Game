@@ -5,10 +5,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { GameComponent } from './game/game.component';
 
+import { MyPipe } from './mypipe';
+
 @NgModule({
   declarations: [
     AppComponent,
-    GameComponent
+    GameComponent,
+    MyPipe
   ],
   imports: [
     BrowserModule,

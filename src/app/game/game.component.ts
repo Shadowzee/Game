@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
+
 
 @Component({
   selector: 'app-game',
@@ -9,35 +10,43 @@ import { FormBuilder } from '@angular/forms';
 export class GameComponent implements OnInit {
 count=1;
 score=0;
+questions;
+question=[];
+form:FormGroup;
 
-questions = this.fb.group({
-    first: [''],
-    sec:['']
-    
-  });
-  items=[1,2];
-  constructor(private fb: FormBuilder) { }
+ 
+ ans=["thi",'sec']
+  constructor(private fb: FormBuilder) {
+    this.form = this.fb.group({
+      question: ['']
+      
+    });
+    this.question=this.getques();
+   }
+   getques(){
+    return [
+      { id: '1', name: 'ques 1',ques:"which",options:[{val:"one"},{val:"two"},{val:"three"},{val:"four"}],ans:"one" },
+      { id: '2', name: 'ques 2',ques:"what" ,options:[{val:"one"},{val:"two"},{val:"three"},{val:"four"}],ans:"one" },
+      { id: '3', name: 'ques 3' ,ques:"when",options:[{val:"one"},{val:"two"},{val:"three"},{val:"four"}],ans:"one" },
+      { id: '4', name: 'ques 4' ,ques:"where",options:[{val:"one"},{val:"two"},{val:"three"},{val:"four"}],ans:"one" }
+    ];
+   }
 
   ngOnInit() {
   }
-  sub(event){
-    this.questions.patchValue({
-first:event.target.value
-    });
-
-if(this.questions.value.first=="thi"){
+  
+  
+  sub(){
+//     
+console.log(this.form.value)
+if(this.form.controls.question.value==this.question[this.count-1].ans){
   this.score++;
 }
+
+
 this.count++;
-  }
-  sub2(event){
-    this.questions.patchValue({
-sec:event.target.value
-    });
-    if(this.questions.value.sec=="sec"){
-      this.score++;
-    }
-this.count++;
-  }
+this.form.reset();
+}
+
 
 }
