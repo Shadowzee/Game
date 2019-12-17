@@ -1,7 +1,7 @@
 <form [formGroup]="form" (ngSubmit)="sub()">
   <ng-container *ngFor="let item of question " >
   <div  *ngIf="count==item.id">
-  <p>Q{{item.ques}}</p>
+  <p>{{item.name}}: {{item.ques}}</p>
   <div *ngFor="let items of item.options">
   <input type="radio" [value]='items.val' formControlName="question">
   <label > {{items.val}} </label>
@@ -26,4 +26,5 @@
            [value]="gaugeValue" 
            [label]="gaugeLabel"  
            [append]="gaugeAppendText">
+           
 </ngx-gauge>
