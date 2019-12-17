@@ -9,7 +9,7 @@
 </div>
 </ng-container>
 <button>Submit</button>
-<div *ngIf="count==3">
+<div *ngIf="count==10">
   Thanks
 </div>
 <div>
@@ -18,13 +18,5 @@
 {{form.value|json}}
 </form>
 <ngx-gauge [type]="gaugeType" 
-[min]="min"
-[max]="max"
-[animate]=true
-[cap]="butt"
-[thresholds]="thresholds"
-           [value]="gaugeValue" 
-           [label]="gaugeLabel"  
-           [append]="gaugeAppendText">
-           
+[min]="min"[max]="max"[animate]=true [cap]="butt"[thresholds]="thresholds"[value]="gaugeValue" [label]="gaugeLabel"[append]="gaugeAppendText">        
 </ngx-gauge>
