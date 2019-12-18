@@ -37,12 +37,13 @@ gaugeAppendText = "/ 10";
  ques;
 
   constructor(private fb: FormBuilder,private config:ConfigService) {
+    this.form = this.fb.group({
+      question: ['']
+      
+    });
     config.getquestions(this.url).subscribe(res=>{
       this.ques=res;
-      this.form = this.fb.group({
-        question: ['']
-        
-      });
+      
       this.question=this.ques;
     });
    

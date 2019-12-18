@@ -1,1 +1,7 @@
-<app-game></app-game>
+<nav>
+    <div *ngIf="!submitshow">
+    <input (keyup)="name($event)">
+    <button routerLink="/game" (click)="switch()">Submit</button>
+</div>  
+</nav>
+  <router-outlet></router-outlet>
