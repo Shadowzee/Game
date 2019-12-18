@@ -11,6 +11,8 @@ import { Observable } from 'rxjs';
 export class ConfigService {
 
   gameSwitch=false;
+  personname;
+  score;
 
   constructor(private http:HttpClient) { }
   getquestions(questionurl):Observable<any>{
@@ -20,7 +22,7 @@ export class ConfigService {
     this.gameSwitch=true;
     return true;
   }
-  createscore(posturl,input):Observable<any>{
-    return this.http.post<any>(posturl,input);
+  createscore(posturl):Observable<any>{
+    return this.http.post<any>(posturl,{[this.personname]:this.score});
   }
 }

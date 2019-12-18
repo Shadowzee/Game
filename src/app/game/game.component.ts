@@ -60,14 +60,16 @@ console.log(this.form.value)
 if(this.form.controls.question.value==this.question[this.count-1].ans){
   this.score++;
 }
+if(this.count==10){
 this.submitscore();
-
+}
 this.count++;
 this.gaugeValue = this.score;
 this.form.reset();
 }
 submitscore(){
-  this.config.createscore(this.submiturl,{hi:"hi"}).subscribe(res=>{
+  this.config.score=this.score;
+  this.config.createscore(this.submiturl).subscribe(res=>{
     console.log(res);
   })
 }

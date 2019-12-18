@@ -8,13 +8,13 @@ import { ConfigService } from './config.service';
 })
 export class AppComponent {
   submitshow;
-  personname;
+  
   constructor(private config:ConfigService){}
   title = 'first';
   switch(){
    this.submitshow= this.config.gameswitchvalue();
   }
   name(event){
-this.personname=event.target.value;
+this.config.personname=event.target.value;
   }
 }
