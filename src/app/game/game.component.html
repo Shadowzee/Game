@@ -8,15 +8,19 @@
   </div>
 </div>
 </ng-container>
-<button>Submit</button>
+<button *ngIf="count!=11">Submit</button>
 <div *ngIf="count==11">
   Thanks
 </div>
-<div>
+<!-- <div>
   Score:{{score}}/10;
-</div>
-{{form.value|json}}
+</div> -->
 </form>
-<ngx-gauge [type]="gaugeType" 
-[min]="min"[max]="max"[animate]=true [cap]="butt"[thresholds]="thresholds"[value]="gaugeValue" [label]="gaugeLabel"[append]="gaugeAppendText">        
-</ngx-gauge>
+<fusioncharts
+  [width]="width"
+  [height]="height"
+  [type]="type"
+  [dataFormat]="dataFormat"
+  [dataSource]="dataSource"
+>
+</fusioncharts>
