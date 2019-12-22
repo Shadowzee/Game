@@ -7,11 +7,11 @@ const csp = require('helmet-csp')
 
 // Serve only the static files form the dist directory
 app.use(helmet())
-app.use(express.static(__dirname + '/dist'));
+app.use(express.static(__dirname + '/dist/first'));
 
 app.get('/*', function(req,res) {
     
-res.sendFile(path.join(__dirname+'/dist/index.html'));
+res.sendFile(path.join(__dirname+'/dist/first/index.html'));
 });
 app.use(csp({
     // Specify directives as normal.
