@@ -16,7 +16,7 @@ import * as FusionCharts from "fusioncharts";
 import * as Widgets from "fusioncharts/fusioncharts.widgets";
 
 import * as FusionTheme from "fusioncharts/themes/fusioncharts.theme.fusion";
-
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 // Pass the fusioncharts library and chart modules
 FusionChartsModule.fcRoot(FusionCharts, Widgets, FusionTheme);
 @NgModule({
@@ -30,7 +30,8 @@ FusionChartsModule.fcRoot(FusionCharts, Widgets, FusionTheme);
     ReactiveFormsModule,
     FusionChartsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,3 +1,4 @@
+<p><ngb-progressbar type="info" [value]="(count-1)*10"></ngb-progressbar></p>
 <form [formGroup]="form" (ngSubmit)="sub()">
   <ng-container *ngFor="let item of question " >
   <div  *ngIf="count==item.id">
