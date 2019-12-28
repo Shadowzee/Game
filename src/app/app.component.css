@@ -9,8 +9,14 @@
     
 }
 .color{
-    color:#1d2021de;
+    color:#f5f5f5de;
 
+}
+.h100{
+    height: 100%;
+}
+.mt{
+    margin-top: 40%;
 }
 .bg {
     /* The image used */
@@ -24,7 +30,17 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
-  .height{
-      height: 700px;
-      padding: 0px;
-  }
+  
+  @media screen and (max-width: 650px) {
+    .bg {
+        background-attachment: scroll;
+        background-image: url("https://st3.depositphotos.com/4799321/12551/v/950/depositphotos_125516044-stock-illustration-tablet-with-white-screen-flat.jpg");
+        
+    }
+    .col-md-5{
+        padding:0px 20px;
+        margin-left: 37px;
+    margin-right: 35px;
+
+    }
+}

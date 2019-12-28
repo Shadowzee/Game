@@ -16,7 +16,7 @@ questions;
 question=[];
 form:FormGroup;
 url="https://my-json-server.typicode.com/Shadowzee/questions/questions";
-submiturl="https://my-json-server.typicode.com/Shadowzee/questions/questions";
+submiturl="https://my-json-server.typicode.com/Shadowzee/questions/submissions";
 gaugeType = "semi";
 gaugeValue = this.score;
 max=10;
@@ -111,7 +111,7 @@ if(this.form.controls.question.value==this.question[this.count-1].ans){
   this.score++;
   this.data.dials.dial[0].value=this.score;
 }
-if(this.count==10){
+if(this.count==1){
 this.submitscore();
 }
 this.count++;

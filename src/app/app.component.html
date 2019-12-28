@@ -1,11 +1,11 @@
-<div class="container-fluid height">
+<div  class="h100">
 <div class="bg">
 <nav>
     <h2 class="heading color">Welcome to riddles!!</h2>
 </nav>
-<div class="row">
-<div class="col-md-1"></div>
-<div  class="col-md-5 main" *ngIf="!submitshow">
+<div class="row" *ngIf="!submitshow">
+<div class="col-md-1 mt"></div>
+<div  class="col-md-5 main" >
   <div class="input-group">
   <input class="form-control" (keyup)="name($event)" placeholder="Enter your name!!">
   <button class="btn btn-success" routerLink="/game" (click)="switch()">Submit</button>
