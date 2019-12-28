@@ -16,21 +16,10 @@
 <div *ngIf="count==11">
   Thanks
 </div>
-<!-- <div>
-  Score:{{score}}/10;
-</div> -->
 </form>
 </div>
 <div class="col-md-5 mt20">
-  <fusioncharts
-  class="taright"
-  [width]="width"
-  [height]="height"
-  [type]="type"
-  [dataFormat]="dataFormat"
-  [dataSource]="dataSource"
->
+  <fusioncharts class="taright" [width]="width" [height]="height" [type]="type" [dataFormat]="dataFormat" [dataSource]="dataSource">
 </fusioncharts>
-
 </div>
 </div>

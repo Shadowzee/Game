@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ConfigService } from '../config.service';
 
-
-
 @Component({
   selector: 'app-game',
   templateUrl: './game.component.html',
@@ -31,12 +29,10 @@ thresholds={
   '0':{
     color:'red'
   }
- 
 }
 gaugeLabel = "Score";
 gaugeAppendText = "/ 10";
  ques;
-
   data = {
   chart: {
     caption: "Score",
@@ -75,34 +71,23 @@ gaugeAppendText = "/ 10";
     ]
   }
 };
-
  width = 260;
  height = 240;
  type = "angulargauge";
  dataFormat = "json";
  dataSource = this.data;
-
   constructor(private fb: FormBuilder,private config:ConfigService) {
     this.form = this.fb.group({
       question: ['']
-      
     });
     config.getquestions(this.url).subscribe(res=>{
       this.ques=res;
-      
       this.question=this.ques;
     });
-   
    }
-   
-
   ngOnInit() {
   }
-  
-  
   sub(){
-//     
-console.log(this.form.value)
 if(this.form.controls.question.value==null ||this.form.controls.question.value=="" ){
   return;
 }
@@ -122,8 +107,5 @@ this.form.reset();
 submitscore(){
   this.config.score=this.score;
   this.config.createscore(this.submiturl).subscribe(res=>{
-    console.log(res);
   })
-}
-
-}
+}}
