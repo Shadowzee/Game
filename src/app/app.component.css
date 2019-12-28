@@ -1,0 +1,30 @@
+.heading{
+    text-align:center;
+}
+.main{
+    text-align: center;
+   
+        margin-top: 14%;
+        margin-left: 6.5%;
+    
+}
+.color{
+    color:#1d2021de;
+
+}
+.bg {
+    /* The image used */
+    background-image: url("https://previews.123rf.com/images/everythingpossible/everythingpossible1504/everythingpossible150400007/38966459-laptop-with-blank-screen-on-white-desk-with-blurred-background-as-concept.jpg");
+  
+    /* Full height */
+    height: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .height{
+      height: 700px;
+      padding: 0px;
+  }

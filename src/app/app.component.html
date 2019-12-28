@@ -1,9 +1,18 @@
-
-<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" />
+<div class="container-fluid height">
+<div class="bg">
 <nav>
-    <div *ngIf="!submitshow">
-    <input (keyup)="name($event)">
-    <button routerLink="/game" (click)="switch()">Submit</button>
-</div>  
+    <h2 class="heading color">Welcome to riddles!!</h2>
 </nav>
+<div class="row">
+<div class="col-md-1"></div>
+<div  class="col-md-5 main" *ngIf="!submitshow">
+  <div class="input-group">
+  <input class="form-control" (keyup)="name($event)" placeholder="Enter your name!!">
+  <button class="btn btn-success" routerLink="/game" (click)="switch()">Submit</button>
+  </div>
+</div>  
+<div class="col-md-6"></div>
+</div>
   <router-outlet></router-outlet>
+  </div>
+  </div>

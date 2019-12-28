@@ -1,15 +1,18 @@
 <p><ngb-progressbar type="info" [value]="(count-1)*10"></ngb-progressbar></p>
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-5 align">
 <form [formGroup]="form" (ngSubmit)="sub()">
   <ng-container *ngFor="let item of question " >
-  <div  *ngIf="count==item.id">
+  <div   *ngIf="count==item.id">
   <p>{{item.name}}: {{item.ques}}</p>
-  <div *ngFor="let items of item.options">
-  <input type="radio" [value]='items.val' formControlName="question">
-  <label > {{items.val}} </label>
+  <div class="form-check" *ngFor="let items of item.options">
+  <input   type="radio" [value]='items.val' formControlName="question">
+  <label class="form-check-label"> {{items.val}} </label>
   </div>
 </div>
 </ng-container>
-<button *ngIf="count!=11">Submit</button>
+<button  class="btn btn-success" *ngIf="count!=11">Submit</button>
 <div *ngIf="count==11">
   Thanks
 </div>
@@ -17,7 +20,10 @@
   Score:{{score}}/10;
 </div> -->
 </form>
-<fusioncharts
+</div>
+<div class="col-md-5 mt20">
+  <fusioncharts
+  class="taright"
   [width]="width"
   [height]="height"
   [type]="type"
@@ -25,3 +31,6 @@
   [dataSource]="dataSource"
 >
 </fusioncharts>
+
+</div>
+</div>
